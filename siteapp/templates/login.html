@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="nav bg-info">
+    <h1 class="text-light" style="margin-left: 40%;">Log In</h1>
+</div>
+<div class="container bg-light" style="border-radius: 10px; width:50%"></div>
+  <form method='post' class='post-form' action="{% url 'login' %}" class="form pt-5 pb-5" style="width: 50%; margin-left:25%">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username"><br>
+    <input type="password" name="password" placeholder="password"><br>
+    <input type="Submit">
+  </form>
+</div>
+
+    {% for message in messages %} 
+    <h3>{{message}}</h3>
+    {% endfor %}
+</div>       
+{% endblock %}
